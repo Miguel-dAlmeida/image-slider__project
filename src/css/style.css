@@ -1,0 +1,140 @@
+.slider-container {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    & .slider__arrows {
+        position: absolute;
+        width: 4.9rem;
+        height: 7.8rem;
+        z-index: 1;
+
+        &.slider__arrows--left {
+            left: 4%;
+            transform: rotateY(180deg);
+        }
+
+        &.slider__arrows--right {
+            right: 4%;
+        }
+
+        &.slider-arrows--opacity {
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+
+    & .slider {
+
+        width: 100%;
+        /* height: 100%; */
+        min-height: 100vh;
+        /* Essa alteração permitiu que a imagem de fundo se expandisse para preencher o contêiner*/
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        opacity: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 0;
+        left: 0;
+        /* Isso aqui permitiu que o `.slider` não fosse sobreposto em sua parte superior quando a altura da tela diminuia */
+
+        &.slider-background--selected {
+            opacity: 1;
+        }
+
+        /* Individual background images */
+        &.slider-background--slide-1 {
+            background-image: url(../images/first_image.jpg);
+        }
+
+        &.slider-background--slide-2 {
+            background-image: url(../images/second_image.jpg);
+        }
+
+        &.slider-background--slide-3 {
+            background-image: url(../images/third_image.jpg);
+        }
+
+        &.slider-background--slide-4 {
+            background-image: url(../images/fourth_image.jpg);
+        }
+
+        & .slider__content {
+            /* As duas linhas abaixo são responsáveis pelo espaçamento entre `.slider__content` e `.credits` */
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 62rem;
+            height: 70rem;
+            border-radius: 1rem;
+            margin-left: 18rem;
+            background-color: #fff;
+            padding: 6.5rem 6rem;
+            box-sizing: border-box;
+            position: relative;
+
+            & .slider__content-title {
+                font-weight: 400;
+                font-size: 5rem;
+                margin-bottom: 8rem;
+            }
+
+            & .slider__content-paragraph {
+                font-size: 2.5rem;
+                line-height: 3.5rem;
+                max-width: 50rem;
+                margin-bottom: 5rem;
+            }
+
+            & .slider__link {
+                font-weight: 500;
+                font-size: 3rem;
+
+                &:hover {
+                    font-weight: 600;
+                }
+
+                &.slider-color--slide-1 {
+                    color: #C50000;
+                }
+
+                &.slider-color--slide-2 {
+                    color: #D9DD10;
+                }
+
+                &.slider-color--slide-3 {
+                    color: #A63A17;
+                }
+
+                &.slider-color--slide-4 {
+                    color: #10ACDD;
+                }
+            }
+        }
+
+        & .credits {
+            align-self: center;
+            margin-bottom: 1rem;
+
+            & .credits__paragraph {
+                padding: 0.4rem;
+                font-size: 2rem;
+                background-color: #fff;
+                border-radius: 0.8rem;
+
+                & .credits__link {
+                    font-weight: 400;
+
+                    &:hover {
+                        font-weight: 700;
+                        transition: 0.2s;
+                    }
+                }
+            }
+        }
+    }
+}
